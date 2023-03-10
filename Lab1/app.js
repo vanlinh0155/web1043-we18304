@@ -1,6 +1,14 @@
-console.log("Hello World");
-let a = 10;
-//set a value of 10
-alert(a);
-var x= prompt("Nhap vao gia tri n: ");//Nhap du lieu
-document.write(x);//Xuat du lieu
+// Nhap a tu ban phim
+let a = prompt("Nhập số nguyên a:")
+
+// Nhap b tu ban phim
+let b = prompt("Nhập số nguyên b:")
+
+// c = a + b
+let c = parseInt(a) + parseInt(b)
+
+// In ra ket qua c
+document.write("Kết quả a + b = ",c)
+
+// Xuat du lieu
+console.log("Kết quả a + b = "+ c)
