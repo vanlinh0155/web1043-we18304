@@ -59,13 +59,13 @@
    // Xếp loại
    let xepLoai = "";
    switch (true) {
-     case diem_tb >= 9 &&  diem_tb <= 10:
+     case diem_tb >= 9:
        xepLoai = "Giỏi";
        break;
-     case  diem_tb >= 7 &&  diem_tb < 9:
+     case  diem_tb >= 7 :
        xepLoai = "Khá";
        break;
-     case  diem_tb>= 5 && diem_tb < 7:
+     case  diem_tb>= 5:
        xepLoai = "Trung bình";
        break;
      default:
@@ -87,11 +87,11 @@
         var diem_tb = (toan + ly + hoa + sinh) / 4;
       
         // xuất kết quả xếp loại
-        if (diem_tb >= 9 && diem_tb <= 10) {
+        if (diem_tb >= 9) {
           console.log("Giỏi");
-        } else if (diem_tb >= 7 && diem_tb < 9) {
+        } else if (diem_tb >= 7 ) {
           console.log("Khá");
-        } else if (diem_tb >= 5 && diem_tb < 7) {
+        } else if (diem_tb >= 5 ) {
           console.log("Trung bình");
         } else {
           console.log("Yếu");
