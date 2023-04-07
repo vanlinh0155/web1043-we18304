@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+    }
+    .bt {
+      display: flex;
+      justify-self: center;
+      text-align: center;
+    }
+    .container {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 8px;
+      width: 700px;
+    }
+    button {
+        height: 40px;
+        width: 120px;
+        margin: 0 45px;
+        border-radius: 20px;
+         
+    }
+    video {
+        width: 600px;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+    button:hover {
+        color: #c51b70;
+        background: #e7da4c;
+    }
+  </style>
+<body>
+    <div class="container">
+        <video id="video" width="640" height="360" controls>
+            <source src="y2mate.com - Central Cee  Let Go Lyrics_v720P.mp4" type="video/mp4">
+          </video>
+          <div class="bt">
+          <button id="play-pause">Play</button>
+          <button id="stop">Stop</button>
+          <button id="mute">Mute</button>
+          <button id="loop">Loop</button>
+        </div>
+        </div>
+
+        
+      <!-- Lấy phần tử video và các nút điều khiển -->
+<script>
+    var video = document.getElementById("video");
+    var playButton = document.getElementById("play-pause");
+    var stopButton = document.getElementById("stop");
+    var muteButton = document.getElementById("mute");
+    var loopButton = document.getElementById("loop");
+  
+    // Hàm chuyển đổi giữa play và pause khi người dùng nhấn nút play/pause
+    function togglePlayPause() {
+      if (video.paused || video.ended) {
+        video.play();
+        playButton.innerHTML = "Pause";
+      } else {
+        video.pause();
+        playButton.innerHTML = "Play";
+      }
+    }
+  
+    // Hàm dừng video khi người dùng nhấn nút stop
+    function stopVideo() {
+      video.pause();
+      video.currentTime = 0;
+      playButton.innerHTML = "Play";
+    }
+  
+    // Hàm tắt hoặc bật tiếng khi người dùng nhấn nút mute/unmute
+    function toggleMute() {
+      if (video.muted) {
+        video.muted = false;
+        muteButton.innerHTML = "Mute";
+      } else {
+        video.muted = true;
+        muteButton.innerHTML = "Unmute";
+      }
+    }
+  
+    // Hàm bật hoặc tắt chế độ loop khi người dùng nhấn nút loop/unloop
+    function toggleLoop() {
+      if (video.loop) {
+        video.loop = false;
+        loopButton.innerHTML = "Loop";
+      } else {
+        video.loop = true;
+        loopButton.innerHTML = "Unloop";
+      }
+    }
+  
+    // Bắt sự kiện khi người dùng nhấn các nút điều khiển
+    playButton.addEventListener("click", togglePlayPause);
+    stopButton.addEventListener("click", stopVideo);
+    muteButton.addEventListener("click", toggleMute);
+    loopButton.addEventListener("click", toggleLoop);
+  </script>
+</body>
+</html>
+
+
+
+
+
+
