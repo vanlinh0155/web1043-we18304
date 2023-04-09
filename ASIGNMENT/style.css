@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
 * {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,10 +9,12 @@
     text-decoration: none;
     list-style: none;
     scroll-behavior: smooth;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 section {
-    padding:  50px 10%;
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+
 }
 *::selection {
     color: #fff;
@@ -24,12 +28,176 @@ header {
     width: 100%;
     top: 0;
     right: 0;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: #fff;
     padding: 15px 18%;
+    transition: 0.2s;
     
+}
+.nav-bar {
+    height: 50px;
+    width: 100%;
+    background: rgba(255,255,255,.2);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.nav-bar ul {
+    list-style: none;
+    float: right;
+    margin-right: 40px;
+}
+.nav-bar li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 10px;
+}
+.nav-bar li a {
+    color: #fff;
+    font-size: 17px;
+    text-transform: capitalize;
+    padding: 7px 25px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.MainButton {
+    position: relative;
+    top: -8px;
+    width: 100px;
+    height: 40px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    outline: none;
+    border: 2px solid #008148;
+    background: transparent;
+    color: #008148;
+    cursor: pointer;
+    font-weight: 600;
+     
+}
+.MainButton:focus {
+    color: #fff;
+    background: #008148;
+    border: none;
+   
+}
+.containerr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+.form-box {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: #008148;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    transform: scale(0) rotate(360deg);
+    opacity: 0.7;
+}
+
+.Loginform-box {
+    transform: scale(1) rotate(0);
+}
+.Registerform {
+    position: absolute;
+    transition: .5s;
+    transform: scale(0) rotate(360deg);
+}
+.Registerform-box {
+    transform: scale(1) rotate(0deg);
+}
+.form-value h2 {
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+}
+.input-box {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 3px solid #fff;
+}
+.input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff8;
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label {
+    top: -5px ;
+}
+.remember-password {
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: #008148;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-password span a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+.remember-password input {
+    accent-color: orangered;
+    margin-right: 3px;
+}
+.btn {
+    background: #f72df7;
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 400;
+}
+.creation-account {
+    color: #fff;
+    text-align: center;
+    margin-top: 5px;
+}
+.creation-account a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: .4s;
+}
+.creation-account a:hover {
+    border-bottom:  2px solid #fff;
+}
+ion-icon {
+    position: absolute;
+    right: 8px;
+    top: 20px;
+    font-size: 1.2em;
+    color: #fff;
 }
 .logo {
     display: flex;
@@ -50,10 +218,21 @@ header {
      font-weight: 600;
      text-transform: uppercase;
      position: relative;
-     left: 200px;
+     left: -90px;
 }
-.navbar a:hover {
-    color: #008148;
+.navbar a::after{
+    content: "";
+    position: absolute;
+    background-color: #008148;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: 0px;
+    transition: 0.3s;
+
+}
+.navbar a:hover::after {
+    width: 100%;
 }
 #menu-icon {
     font-size: 24px;
@@ -77,7 +256,7 @@ header {
     flex: 1 1 17rem;
 }
 .home-img img {
-   height: 100%;
+  width: 100%;
 }
 
 .home-text span {
@@ -122,11 +301,14 @@ header {
     font-size: 2rem;
     color: #008148;
 }
-.shop-container {
+.shop-container 
+ {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 5rem;
+    height: 60vh;
+    align-items: center;
 }
 .shop-container .box {
     flex: 1 1 10rem;
@@ -180,6 +362,11 @@ header {
     gap: 1.5rem;
     margin-top: 2rem;
 }
+.delivery {
+    height: 100vh;
+   
+    align-items: center;
+}
 .delivery-img , 
 .app-img {
     flex: 1 1 21rem;
@@ -197,6 +384,10 @@ header {
 .app-text p {
  margin: 0.5rem 0 1rem;
  text-align: justify;
+}
+.app {
+    height: 100vh;
+    align-items: center;
 }
 .about {
     display: flex;
@@ -226,17 +417,19 @@ header {
     align-items: center;
 }
 .social a {
-    font-size: 27px;
+    font-size: 19px;
     margin: 0.5rem;
+    position: relative;
+    top:20px;
 }
 .social a .bx {
     padding: 5px;
     color: #fff;
-    background: #161616;
+    background: #191818;
     border-radius: 50%;
 }
 .social a .bx:hover {
-    background: #ebdbc8;
+    background: #008148;
 }
 .links {
     margin: 1rem 0 1rem;
@@ -250,6 +443,57 @@ header {
 .link a:hover {
     color: var(#008148);
 }
-.contact p {
-    text-align: center;
+
+.contact-icon a:hover {
+    transform:scale(1.2);
 }
+
+.logoo {
+        display: flex;
+        align-items: center;
+}
+.logoo img {
+        width: 55px;
+        position: relative;
+        left: 10px;
+}
+.footer {
+    width: 100%;
+    background: rgb(0,0,0,0.79);
+    height: 322px;
+    margin-top: 338px;
+    padding: 0px 63px;
+    padding-top: 57px;
+    display: flex;
+    justify-content: space-around;
+}
+.footer .end {
+    width: 250px;
+    color: #fff;
+}
+.footer .end .quick-menu {
+    margin-top: 40px;
+}
+.footer .end .quick-menu .itemm {
+    margin-bottom: 12px;
+}
+.footer .end .quick-menu .itemm a {
+    color: #fff;
+    text-decoration: none;
+}
+.footer .end form input {
+    width: 294px;
+    height: 42px;
+    background: transparent;
+    padding-left: 20px;
+    color: #fff;
+    margin-top: 30px;
+}
+ .footer .end form button {
+    background: #362f2f;
+    box-shadow: 5px 5px 4px rgba(0,0,0.25);
+    width: 163px;
+    height: 38px;
+    margin-top: 29px;
+    color: #fff;
+ } 
