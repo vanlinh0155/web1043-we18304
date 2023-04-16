@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-
+    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
     />
 
-    <title>Document</title>
+    <title>Starbucks</title>
   </head>
   <body>
     <header>
@@ -34,6 +34,7 @@
         <button class="MainButton">Login</button>
       </ul>
     </header>
+   <!--Login -->
     <nav class="nav-bar">
       <div class="containerr">
         <div class="form-box Loginform">
@@ -63,43 +64,30 @@
           </div>
         </div>
 
-        <div class="form-box Registerform">
-          <div class="form-value">
-            <h2>Regisert</h2>
-            <div class="input-box">
-              <ion-icon name="mail-outline"></ion-icon>
-              <input type="email" required />
-              <label for="">Email</label>
-            </div>
-            <div class="input-box">
-              <ion-icon name="lock-closed-outline"></ion-icon>
-              <input type="password" required />
-              <label for="">Password</label>
-            </div>
-            <div class="input-box">
-              <ion-icon name="lock-closed-outline"></ion-icon>
-              <input type="password" required />
-              <label for=""> Cofirm Password</label>
-            </div>
-            <button class="btn">Register</button>
-            <div class="creation-account">
-              <span>Already have an account ? <a href="#">Register</a></span>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </nav>
+    <!--End Login -->
+
+    <!--Home -->
     <section class="home" id="home">
       <div class="home-text">
         <span>Welcome</span>
         <h1>Coffee Starbucks</h1>
         <h2>Trải nghiệm cafe theo cách riêng</h2>
         <a href="#" class="mua">Mua Tại Đây </a>
+        <div class="salee">
+          <div class="time" id="coutdown">
+          </div>
+        <h4><i>FLASH SALE</i></h4><br>
+     </div>
       </div>
       <div class="home-img">
         <img id="img" onclick="changeImage()" src="Image/home5.png" />
       </div>
     </section>
+      <!--End Home -->
+      
+      <!--Shop -->
     <section class="shop" id="shop">
       <div class="heading">
         <span>Mua ngay</span>
@@ -155,7 +143,9 @@
         </div>
       </div>
     </section>
+      <!--End Shop --> 
 
+      <!--Delivery -->
     <section class="delivery" id="delivery">
       <div class="heading">
         <span> Nhận nó một cách dễ dàng ngay bây giờ</span>
@@ -183,7 +173,9 @@
         </div>
       </div>
     </section>
+      <!--End Delivery -->
 
+       <!-- App -->
     <section class="app" id="app">
       <div class="heading">
         <span>Download App</span>
@@ -214,7 +206,9 @@
         </div>
       </div>
     </section>
-
+     <!-- End App -->
+    
+     <!-- About -->
     <section class="about" id="about">
       <div class="about-img">
         <img src="Image/about.jpg" />
@@ -242,7 +236,26 @@
         <a href="#" class="mua">Đọc thêm ở đây</a>
       </div>
     </section>
+    <!-- End About -->
+    <!--FormLienHe -->
+    <section class="acc">
+    <form class="validatee">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" placeholder="Họ và Tên" required><br>
+   
+      <label for="phone">Phone:</label><br>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Số Điện Thoại" required><br>
+  
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+  
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+   <!-- End LienHe -->
+   
 
+    <!-- Contact -->
     <section class="contact" id="contact">
       <div class="footer" id="contact">
         <div class="end">
@@ -291,8 +304,12 @@
         </div>
       </div>
     </section>
+    <!--End Contact -->
+
+    <!--Javascript -->
     <script src="app.js"></script>
     <script>
+      //OneMouse
       function bigImg(x) {
         x.style.height = "64px";
         x.style.width = "64px";
@@ -313,7 +330,24 @@
         }
       };
       setInterval(changeImage, 1000);
-      //Coutdown Time
+       //Ktra SDT
+       document.getElementById("phone").addEventListener("input", function() {
+        this.setCustomValidity("");
+        if (!this.value.match(/^[0-9]{10}$/)) {
+          this.setCustomValidity("Please enter a 10-digit phone number");
+        }
+      });
+      
+      //Ktra Email
+      document.getElementById("email").addEventListener("input", function() {
+        this.setCustomValidity("");
+        if (!this.value.match(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/)) {
+          this.setCustomValidity("Please enter a valid email address");
+        }
+      });
     </script>
+    <!-- End -->
+
+    
   </body>
 </html>
